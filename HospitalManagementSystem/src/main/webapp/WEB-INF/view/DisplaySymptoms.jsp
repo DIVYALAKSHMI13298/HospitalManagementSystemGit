@@ -19,31 +19,5 @@
 		<li><a href="${url}"><c:out value="${list.symptoms}" /></a></li>
 	</c:forEach>
 
-	<%-- <c:forEach var="list" items="${diagnosis}">
-		<a href="/displayHistory?link="><c:out value="${list.symptoms}" /></a>
-		<br>
-	</c:forEach> --%>
-	<%-- <li><a href="${url}">${faculty.name}</a></li> --%>
-	<%-- 
-	
-	<%-- <table border="1" cellpadding="5">
-		<h2>List of Symptoms</h2>
-		<tr>
-			
-		<tr>
-                <th>Emp No</th>
-                <th>Employee Name</th>
-                <th>Department</th>
-                <th>Salary</th>
-            </tr>
-            <c:forEach var="list" items="${diagnosis}">
-                <tr>
-                    <td><c:out value="${list.diagnosisId}" /></td>
-                    <td><c:out value="${list.patientId}" /></td>
-                    <td><c:out value="${list.symptoms}" /></td>
-                    <td><c:out value="${list.diagnosis}" /></td>
-                </tr>
-            </c:forEach>
-	</table> --%>
 </body>
 </html>
