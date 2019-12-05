@@ -35,24 +35,6 @@ public class HospitalManagementSystemController {
 		return "patient";
 	}
 
-	/*
-	 * @RequestMapping(value="/searchSymptoms") public String
-	 * getSymptoms(@RequestParam ("pid")int patientId, Model model){
-	 * System.out.println("pid:"+patientId); List<Diagnosis>
-	 * listSymptoms=this.hospitalManagementDaoInter
-	 * .getPatientSymptoms(patientId);
-	 * 
-	 * Iterator iterator = listSymptoms.iterator();
-	 * 
-	 * System.out.println("Symptoms List : ");
-	 * 
-	 * while (iterator.hasNext()) System.out.print(iterator.next() + " ");
-	 * 
-	 * model.addAttribute("symptomslist", listSymptoms);
-	 * 
-	 * return "DisplaySymptoms"; }
-	 */
-
 	@RequestMapping(value = "/searchSymptoms")
 	public String getSymptoms(@RequestParam("pid") int patientId, Model model) {
 		System.out.println("pid:" + patientId);
@@ -64,36 +46,13 @@ public class HospitalManagementSystemController {
 	}
 
 	@RequestMapping(value="/displayHistory")
-	public String getSymptoms(@RequestParam Map<Integer,String> requestParams, Model model){
-		Integer diagnosisId=Integer.parseInt(requestParams.get("diagnosisid"));
+	public String getSymptoms(@RequestParam Map<Integer,String> requestParams, Model model){		
+		Integer patientId=Integer.parseInt(requestParams.get("patientid"));
 		String symptoms=requestParams.get("symptom");
-		System.out.println("Diag Id:"+diagnosisId+"\tsymptom:"+symptoms);
-		List<Diagnosis> listDiagnosis=this.hospitalManagementDaoInter.findByDiagnosisIdAndSymptoms(diagnosisId, symptoms);
+		System.out.println("Diag Id:"+patientId+"\tsymptom:"+symptoms);
+		List<Diagnosis> listDiagnosis=this.hospitalManagementDaoInter.findByPatientIdAndSymptoms(patientId, symptoms);
 		model.addAttribute("listdiagnosis", listDiagnosis);
         System.out.println("List elements : "+listDiagnosis);          
 		return "DisplayDiagnosis";
 	}
-	/*
-	 * @RequestMapping(value="/searchSymptoms") public String
-	 * getSymptoms(@RequestParam ("pid")String symptoms, Model model){
-	 * System.out.println("symptom:"+symptoms); Diagnosis
-	 * diagnosis=this.hospitalManagementDaoInter.findBySymptoms(symptoms);
-	 * model.addAttribute("diagnosis", diagnosis);
-	 * System.out.println("List elements : "+diagnosis.getModeOfPayment());
-	 * 
-	 * return "DisplaySymptoms"; }
-	 */
-
-	/*
-	 * @RequestMapping(value="/searchSymptoms") public String
-	 * getSymptoms(@RequestParam ("pid")int patientId){
-	 * System.out.println("pid:"+patientId); List<Diagnosis>
-	 * listSymptoms=this.hospitalManagementDaoInter
-	 * .findByDiagnosisId(patientId); ModelAndView modelAndView = new
-	 * ModelAndView("DisplaySymptoms"); modelAndView.addObject("symptoms",
-	 * listSymptoms);
-	 * 
-	 * return "DisplaySymptoms"; }
-	 */
-
 }
