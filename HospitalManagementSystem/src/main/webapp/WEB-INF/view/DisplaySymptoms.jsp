@@ -10,28 +10,27 @@
 <body>
 	<h1>Symptoms!!!</h1>
 
-	<c:forEach var="list" items="${diagnosis}">
+	<%-- <c:forEach var="list" items="${diagnosis}">
 		<c:url value="/displayHistory" var="url">
 			<c:param name="patientid" value="${list.patientId}" />
 			<c:param name="symptom" value="${list.symptoms}" />
 		</c:url>
 		<li><a href="${url}"><c:out value="${list.symptoms}" /></a></li>
-	</c:forEach>
+	</c:forEach> --%>
 
-	<%-- <c:forEach var="list" items="${diagnosis}">
-	<c:out value="hai"></c:out>
+	<c:forEach var="list" items="${diagnosis}">
+		<c:out value="hai"></c:out>
 		<c:url value="/displayHistory" var="url">
-			<c:param name="diagnosisid" value="${list.diagnosisId}" />
 			<c:param name="patientid" value="${list.patientId}" />
 			<c:param name="symptom" value="${list.symptoms}" />
 		</c:url>
-		<c:set var="nameLookup" value="${list.symptoms}"  />
+		<c:set var="nameLookup" value="${list.patientId}" />
 		<c:out value="${nameLookup}"></c:out>
-		<c:if test="${list.symptoms} != nameLookup">
-		<c:out value="hai"></c:out>
+		<c:if test="${list.patientId} != nameLookup">
+			<c:out value="hai"></c:out>
 			<li><a href="${url}"><c:out value="${list.symptoms}" /></a></li>
 		</c:if>
-	</c:forEach> --%>
+	</c:forEach>
 
 
 	<%-- <c:if test="${not empty entries}">
@@ -51,3 +50,5 @@
 
 </body>
 </html>
+
+

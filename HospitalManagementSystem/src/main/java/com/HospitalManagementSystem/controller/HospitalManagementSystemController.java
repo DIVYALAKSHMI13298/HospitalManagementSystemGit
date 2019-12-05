@@ -27,12 +27,22 @@ public class HospitalManagementSystemController {
 
 	@RequestMapping(value = "/")
 	public String homePage() {
-		return "home";
+		return "hospital";
+	}
+	
+	@RequestMapping(value = "/firstpage")
+	public String firstPage() {
+		return "firstpage";
 	}
 
 	@RequestMapping(value = "/getpatientid")
 	public String getPatientId() {
 		return "patient";
+	}
+	
+	@RequestMapping(value = "/physicianSearch")
+	public String physicianSearch() {
+		return "PhysicianSearch";
 	}
 
 	@RequestMapping(value = "/searchSymptoms")
