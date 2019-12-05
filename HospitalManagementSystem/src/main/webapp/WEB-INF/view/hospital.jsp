@@ -169,9 +169,11 @@ to {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link active">Services</a>
-                <a href="#" class="nav-item nav-link active">About</a>
-                <a href="#" class="nav-item nav-link active">Contact</a>
+                <a href="#" class="nav-item nav-link active">Enroll Patient</a>
+                <a href="#" class="nav-item nav-link active">Enroll Physician</a>
+                <a href="#" class="nav-item nav-link active">Search Physician</a>
+                <a href="#" class="nav-item nav-link active">Add Diagnosis</a>
+                <a href="#" class="nav-item nav-link active">View Patient History</a>
             </div>
         </div>
     </div>    
@@ -180,7 +182,7 @@ to {
 	<form class="modal-content animate" action="/firstpage"
 		method="post">
 		<div class="imgcontainer">
-			<img src="admin3.jpg" alt="Avatar" class="avatar">
+			<img src="Images/admin3.jpg" alt="Avatar" class="avatar">
 		</div>
 
 		<div class="container">
